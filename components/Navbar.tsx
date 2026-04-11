@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from 'next/image';
 import { Menu, X } from "lucide-react";
 
 const links = [
@@ -18,10 +19,15 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto flex items-center justify-between px-5 py-3">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-hive-orange to-hive-amber flex items-center justify-center">
-            <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="currentColor">
-              <path d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 2.18L18.39 8 12 11.82 5.61 8 12 4.18zM5 9.5l6 3.33V19.5l-6-3.33V9.5zm8 10v-6.67l6-3.33v6.67l-6 3.33z"/>
-            </svg>
+          <div className="w-9 h-9 flex items-center justify-center">
+            <Image
+              src="/Icon-Logo.svg"
+              alt="Hive Forge Logo"
+              width={28}          // slightly smaller than the box for breathing room
+              height={28}
+             className="object-contain"
+             priority            // optional but good for navbar logo
+             />
           </div>
           <span className="text-xl font-bold text-forge-black tracking-tight">
             Hive<span className="text-hive-orange">Forge</span>
