@@ -128,3 +128,4 @@ After showing the demo: "I can have your version live by [day after tomorrow]. A
 - **Hosting:** Optimised for Vercel (also works on Netlify, Cloudflare Pages)
 - **SEO:** Full meta tags, Open Graph, JSON-LD LocalBusiness schema
 - **Performance:** No client-side JS except interactive components (form, nav menu, floating CTA). Static rendering for all content sections.
+test deploy
