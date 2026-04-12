@@ -1,41 +1,9 @@
+// components/ContactForm.tsx
 "use client";
 
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
-
-// ← Server Action lives here (or move to a separate actions.ts file)
-async function sendContact(formData: FormData) {
-  "use server";   // ← this is the magic line
-
-  const name = formData.get("name") as string;
-  const contact = formData.get("contact") as string;   // phone or email
-  const business = formData.get("business") as string;
-  const message = formData.get("message") as string;
-
-  const resend = new Resend(process.env.RESEND_API_KEY);
-
-  try {
-    await resend.emails.send({
-      from: "HiveForge <proposals@hiveforge.co.uk>",
-      to: ["your@hiveforge.co.uk"], // change to hello@ or whatever you use
-      subject: `New HiveForge lead: ${business || name}`,
-      html: `
-        <h2>New lead from hiveforge.co.uk</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Contact:</strong> ${contact}</p>
-        <p><strong>Trade & Area:</strong> ${business}</p>
-        <p><strong>Message:</strong> ${message || "—"}</p>
-        <hr>
-        <p><small>Sent via HiveForge website • ${new Date().toLocaleString("en-GB")}</small></p>
-      `,
-    });
-
-    return { success: true };
-  } catch (error) {
-    console.error(error);
-    return { success: false };
-  }
-}
+import { sendContact } from "@/app/actions";   // ← this import is the fix
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -54,8 +22,11 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-forge-navy relative overflow-hidden noise-overlay">
-      {/* your existing background blob */}
+    <section
+      id="contact"
+      className="py-20 md:py-28 bg-forge-navy relative overflow-hidden noise-overlay"
+    >
+      <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-hive-orange/5 rounded-full blur-3xl" />
       <div className="relative z-10 max-w-2xl mx-auto px-5">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
@@ -70,7 +41,9 @@ export default function ContactForm() {
           <div className="text-center bg-white/10 rounded-2xl p-10 border border-white/10">
             <CheckCircle size={48} className="text-hive-amber mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">Message received!</h3>
-            <p className="text-white/50">Adule will reply within 4 hours. Check your inbox (and spam folder).</p>
+            <p className="text-white/50">
+              Adule will reply within 4 hours. Check your inbox (and spam folder).
+            </p>
           </div>
         ) : (
           <form action={handleSubmit} className="space-y-5">
