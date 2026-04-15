@@ -6,13 +6,10 @@ export default function BrandStory() {
       <div className="relative z-10 max-w-6xl mx-auto px-5">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
-            The <span className="text-hive-orange">Hive</span> +{" "}
-            <span className="text-hive-amber">Forge</span> Method
+            Our simple approach
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Instinctive AI intelligence meets rock-solid craftsmanship. Your
-            website works like a hive — sensing, capturing and converting
-            leads 24/7 — while you're out forging real work on site.
+            Practical websites that get you more jobs without you managing marketing.
           </p>
         </div>
 
@@ -20,23 +17,23 @@ export default function BrandStory() {
           {[
             {
               icon: Brain,
-              title: "The Hive",
-              subtitle: "Instinctive AI intelligence",
-              body: "Our AI system researches your trade, your area, your competitors — then generates conversion-optimised copy, local SEO schema, and emergency CTAs automatically. Like a hive mind sensing every opportunity.",
+              title: "Fast delivery",
+              subtitle: "48 hours",
+              body: "We research your trade and area then build and launch your site in 48 hours.",
               color: "from-hive-orange to-hive-amber",
             },
             {
               icon: Hammer,
-              title: "The Forge",
-              subtitle: "Rock-solid craftsmanship",
-              body: "Every site is hand-checked, mobile-first, and deployed on enterprise-grade infrastructure. Fast, reliable, built to last — like quality trade work, no corners cut.",
+              title: "Mobile-first design",
+              subtitle: "Works on any phone",
+              body: "Customers can call or request a quote instantly while you're on the job.",
               color: "from-hive-amber to-yellow-400",
             },
             {
               icon: Zap,
-              title: "The Result",
-              subtitle: "Jobs while you sleep",
-              body: "Your site captures leads at 2 AM when someone's boiler breaks. Floating call buttons, 24/7 emergency CTAs, and Google-optimised pages bring customers to you — not your competitor.",
+              title: "Built-in leads",
+              subtitle: "24/7 tools",
+              body: "Emergency forms, call buttons and local SEO bring jobs in even when you're working.",
               color: "from-yellow-400 to-hive-orange",
             },
           ].map(({ icon: Icon, title, subtitle, body, color }) => (

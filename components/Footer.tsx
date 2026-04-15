@@ -8,7 +8,7 @@ export default function Footer() {
               Hive<span className="text-hive-orange">Forge</span>
             </span>
             <p className="text-white/30 text-sm mt-1">
-              Beehive-mind AI websites forged for South West trades.
+              Fast websites for South West trades businesses.
             </p>
           </div>
 

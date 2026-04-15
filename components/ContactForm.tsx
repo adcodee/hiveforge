@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
-import { sendContact } from "@/app/actions";   // ← this import is the fix
+import { sendContact } from "@/app/actions";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -30,10 +30,10 @@ export default function ContactForm() {
       <div className="relative z-10 max-w-2xl mx-auto px-5">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
-            Ready to Forge Your Site?
+            Ready to get more booked jobs?
           </h2>
           <p className="text-white/50 text-lg">
-            Tell us your trade and area. We'll reply within 4 hours with a free proposal — no obligation, no hard sell.
+            Tell us your trade and area. We'll reply within 4 hours with a free proposal — no obligation.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function ContactForm() {
               ) : (
                 <>
                   <Send size={20} />
-                  Reply YES — Get My Free Proposal
+                  Get my free proposal
                 </>
               )}
             </button>

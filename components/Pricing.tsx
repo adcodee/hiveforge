@@ -15,55 +15,48 @@ interface Tier {
 const tiers: Tier[] = [
   {
     name: "Core Website",
-    price: "£497",
+    price: "£997",
     period: "one-off",
-    description: "A high-converting trades website, live in 48 hours.",
+    description: "Full AI build, live in 48 hours, 1 round of revisions.",
     features: [
-      { text: "Mobile-first, responsive design", included: true },
-      { text: "Emergency 24/7 CTA & floating call button", included: true },
+      { text: "Mobile-first design", included: true },
+      { text: "24/7 emergency CTA & floating call button", included: true },
       { text: "Local SEO schema markup", included: true },
       { text: "Core Web Vitals 95+ optimised", included: true },
-      { text: "Deployed on Vercel (SSL, CDN)", included: true },
-      { text: "AI chatbot integration", included: false },
+      { text: "1 round of revisions", included: true },
+      { text: "AI chatbot", included: false },
       { text: "Monthly SEO content", included: false },
-      { text: "Google Business Profile management", included: false },
+      { text: "Google Business updates", included: false },
     ],
-    cta: "Get Started — £497",
+    cta: "Get your Core Website",
   },
   {
     name: "Growth Retainer",
     price: "£97",
     period: "/month",
-    description: "Core Website + ongoing growth tools to keep jobs flowing.",
+    description: "Core website plus AI chatbot, Google updates and 2 SEO posts per month.",
     features: [
       { text: "Everything in Core Website", included: true },
-      { text: "AI chatbot (Tidio) installed & managed", included: true },
-      { text: "Monthly blog post (AI + human edit)", included: true },
+      { text: "AI chatbot installed & managed", included: true },
+      { text: "2 SEO posts per month", included: true },
       { text: "Google Business Profile updates", included: true },
       { text: "Monthly performance report", included: true },
-      { text: "Dedicated account manager", included: false },
-      { text: "Quarterly strategy call", included: false },
-      { text: "Priority support", included: false },
     ],
-    cta: "Start Growing — £97/mo",
+    cta: "Start Growth Retainer",
     popular: true,
   },
   {
     name: "Full Retainer",
     price: "£197",
     period: "/month",
-    description: "The complete package. We handle everything — you handle jobs.",
+    description: "Everything above plus full local SEO, reports and a 15-minute call.",
     features: [
       { text: "Everything in Growth Retainer", included: true },
-      { text: "4× monthly SEO content pieces", included: true },
-      { text: "Dedicated account manager", included: true },
-      { text: "Quarterly strategy & conversion call", included: true },
-      { text: "Priority support (same-day response)", included: true },
-      { text: "A/B testing & conversion optimisation", included: true },
-      { text: "Social media content templates", included: true },
-      { text: "Competitor monitoring", included: true },
+      { text: "Full local SEO", included: true },
+      { text: "Quarterly strategy call", included: true },
+      { text: "Priority support", included: true },
     ],
-    cta: "Go Full Forge — £197/mo",
+    cta: "Start Full Retainer",
   },
 ];
 
@@ -73,15 +66,11 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto px-5">
         <div className="text-center mb-16">
           <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
-            Transparent pricing
+            Clear pricing
           </p>
           <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
-            No Hidden Fees. No Hype.
+            Simple packages
           </h2>
-          <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
-            Pick the package that fits your business. Every plan includes a
-            site that's live in 48 hours.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 items-start">
@@ -134,7 +123,7 @@ export default function Pricing() {
                 href="#contact"
                 className={`block text-center font-bold py-3.5 rounded-xl transition-colors ${
                   tier.popular
-                    ? "bg-hive-orange text-white hover:bg-hive-orange/90 forge-glow"
+                    ? "bg-hive-orange text-white hover:bg-hive-orange/90"
                     : "bg-forge-navy text-white hover:bg-forge-navy/90"
                 }`}
               >

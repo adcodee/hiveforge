@@ -14,21 +14,21 @@ export default function Hero() {
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 bg-hive-orange/10 text-hive-orange text-sm font-semibold px-4 py-1.5 rounded-full mb-6 animate-fade-in">
             <Clock size={14} />
-            AI websites live in 48 hours
+            Live in 48 hours
           </div>
 
           {/* Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight text-forge-black mb-6 animate-fade-up">
-            Stop losing jobs to{" "}
+            Get more booked jobs {" "}
             <span className="text-gradient-orange">
-              tradesmen with better websites
+              without handling your own marketing.
             </span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-forge-black/60 leading-relaxed mb-8 max-w-xl animate-fade-up stagger-2">
-            HiveForge builds high-converting, mobile-first websites for South
-            West trades businesses — plumbers, electricians, builders — using AI.
+            Modern, mobile-first sites with local SEO and lead tools.
+            Delivered fast at a fair price for sole traders.
             Your site goes live in 48&nbsp;hours. You get 5–15 extra jobs a
             month.
           </p>
