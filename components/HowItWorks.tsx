@@ -1,4 +1,4 @@
-import { Search, Code, Rocket, BarChart3 } from "lucide-react";
+import { Search, Code, Rocket, BarChart3, Video } from "lucide-react";
 
 const steps = [
   {
@@ -20,8 +20,14 @@ const steps = [
     body: "Your site is live in 48 hours on fast, reliable hosting.",
   },
   {
-    icon: BarChart3,
+    icon: Video,
     num: "04",
+    title: "Onboarding call",
+    body: "A 30-minute call plus a personalised Loom video showing you exactly how to update your site, swap photos, and use your AI chatbot.",
+  },
+  {
+    icon: BarChart3,
+    num: "05",
     title: "Keep growing",
     body: "Optional monthly support adds chatbots, SEO posts and updates.",
   },
@@ -43,7 +49,7 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {steps.map(({ icon: Icon, num, title, body }) => (
             <div
               key={num}

@@ -23,7 +23,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} HiveForge. All rights reserved.</p>
           <p>
             Serving Exeter, Devon, Cornwall, Bristol & Somerset.{" "}
-            <a href="#" className="underline hover:text-white/50">
+            <a href="/privacy" className="underline hover:text-white/50">
               Privacy Policy
             </a>
           </p>
