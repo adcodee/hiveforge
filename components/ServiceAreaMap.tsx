@@ -1,3 +1,5 @@
+import Reveal from "@/components/ui/Reveal";
+
 const areas = [
   { name: "Exeter", x: 52, y: 62 },
   { name: "Plymouth", x: 30, y: 72 },
@@ -11,18 +13,21 @@ export default function ServiceAreaMap() {
   return (
     <section id="area" className="py-20 md:py-28 honeycomb-bg">
       <div className="max-w-6xl mx-auto px-5">
-        <div className="text-center mb-12">
-          <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
-            Where we work
-          </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
-            South West UK
-          </h2>
-          <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
-            Based in the South West, serving trades across Devon, Cornwall, Somerset, Bristol and beyond.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-12">
+            <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
+              Where we work
+            </p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
+              South West UK
+            </h2>
+            <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
+              Based in the South West, serving trades across Devon, Cornwall, Somerset, Bristol and beyond.
+            </p>
+          </div>
+        </Reveal>
 
+        <Reveal delay={100}>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* SVG map */}
           <div className="relative bg-white rounded-3xl border border-gray-100 shadow-sm p-6 overflow-hidden">
@@ -104,6 +109,7 @@ export default function ServiceAreaMap() {
             </p>
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );

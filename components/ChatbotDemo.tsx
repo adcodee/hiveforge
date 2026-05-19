@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 const DEMO_CONVERSATION = [
   {
@@ -57,6 +58,7 @@ export default function ChatbotDemo() {
       <div className="relative z-10 max-w-6xl mx-auto px-5">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Copy */}
+          <Reveal>
           <div>
             <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
               Growth &amp; Full Retainer
@@ -89,8 +91,10 @@ export default function ChatbotDemo() {
               Get a chatbot on your site
             </a>
           </div>
+          </Reveal>
 
           {/* Demo chat window */}
+          <Reveal delay={200}>
           <div className="flex justify-center md:justify-end">
             <div className="w-full max-w-sm">
               {/* Phone chrome */}
@@ -176,6 +180,7 @@ export default function ChatbotDemo() {
               </p>
             </div>
           </div>
+          </Reveal>
         </div>
       </div>
     </section>

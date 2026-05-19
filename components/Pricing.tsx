@@ -1,4 +1,5 @@
 import { Check, X } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 type Feature = { text: string; included: boolean };
 
@@ -64,23 +65,25 @@ export default function Pricing() {
   return (
     <section id="pricing" className="py-20 md:py-28 honeycomb-bg">
       <div className="max-w-6xl mx-auto px-5">
-        <div className="text-center mb-16">
-          <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
-            Clear pricing
-          </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
-            Simple packages
-          </h2>
-        </div>
+        <Reveal>
+          <div className="text-center mb-16">
+            <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
+              Clear pricing
+            </p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
+              Simple packages
+            </h2>
+          </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-6 items-start">
-          {tiers.map((tier) => (
+          {tiers.map((tier, i) => (
+            <Reveal key={tier.name} delay={i * 100}>
             <div
-              key={tier.name}
-              className={`relative rounded-2xl p-8 border transition-all ${
+              className={`relative rounded-2xl p-8 border transition-all duration-300 ${
                 tier.popular
-                  ? "border-hive-orange shadow-xl shadow-hive-orange/10 scale-[1.03]"
-                  : "border-gray-100 bg-white shadow-sm"
+                  ? "border-hive-orange shadow-xl shadow-hive-orange/10 scale-[1.03] hover:-translate-y-1"
+                  : "border-gray-100 bg-white shadow-sm hover:-translate-y-1 hover:shadow-lg"
               }`}
             >
               {tier.popular && (
@@ -130,6 +133,7 @@ export default function Pricing() {
                 {tier.cta}
               </a>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

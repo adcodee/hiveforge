@@ -1,3 +1,5 @@
+import Reveal from "@/components/ui/Reveal";
+
 const projects = [
   {
     name: "Dave's Plumbing",
@@ -53,23 +55,25 @@ export default function PortfolioShowcase() {
   return (
     <section id="portfolio" className="py-20 md:py-28 honeycomb-bg">
       <div className="max-w-6xl mx-auto px-5">
-        <div className="text-center mb-12">
-          <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
-            Our work
-          </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
-            Sites we've built
-          </h2>
-          <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
-            Every HiveForge site is built to rank, convert and capture leads — not just look good.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-12">
+            <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
+              Our work
+            </p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
+              Sites we've built
+            </h2>
+            <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
+              Every HiveForge site is built to rank, convert and capture leads — not just look good.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {projects.map((p) => (
+          {projects.map((p, i) => (
+            <Reveal key={p.name} delay={i * 100}>
             <div
-              key={p.name}
-              className={`rounded-2xl border p-6 ${p.color} ${p.accent} hover:shadow-lg transition-shadow`}
+              className={`rounded-2xl border p-6 ${p.color} ${p.accent} hover:-translate-y-2 hover:shadow-xl transition-all duration-300`}
             >
               {/* Header */}
               <div className="flex items-center gap-3 mb-5">
@@ -113,6 +117,7 @@ export default function PortfolioShowcase() {
                 ))}
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
 

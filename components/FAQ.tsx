@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 const faqs = [
   {
@@ -36,20 +37,25 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-20 md:py-28 bg-white">
       <div className="max-w-3xl mx-auto px-5">
-        <div className="text-center mb-12">
-          <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
-            Common questions
-          </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
-            Answers before you ask
-          </h2>
-        </div>
+        <Reveal>
+          <div className="text-center mb-12">
+            <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
+              Common questions
+            </p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
+              Answers before you ask
+            </h2>
+          </div>
+        </Reveal>
 
+        <Reveal delay={100}>
         <div className="space-y-3">
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="border border-gray-200 rounded-2xl overflow-hidden"
+              className={`border rounded-2xl overflow-hidden transition-colors duration-200 ${
+                open === i ? "border-hive-orange/40" : "border-gray-200"
+              }`}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
@@ -65,14 +71,19 @@ export default function FAQ() {
                   }`}
                 />
               </button>
-              {open === i && (
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  open === i ? "max-h-96" : "max-h-0"
+                }`}
+              >
                 <div className="px-6 pb-5 text-forge-black/60 text-sm leading-relaxed border-t border-gray-100">
                   <p className="pt-4">{faq.a}</p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
+        </Reveal>
       </div>
     </section>
   );

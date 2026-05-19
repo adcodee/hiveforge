@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Reveal from "@/components/ui/Reveal";
 
 const examples = [
   {
@@ -85,19 +86,22 @@ export default function BeforeAfterGallery() {
   return (
     <section id="gallery" className="py-20 md:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-5">
-        <div className="text-center mb-12">
-          <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
-            Real transformations
-          </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
-            Before &amp; after
-          </h2>
-          <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
-            See what happens when a trades business gets a proper HiveForge site.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-12">
+            <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
+              Real transformations
+            </p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
+              Before &amp; after
+            </h2>
+            <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
+              See what happens when a trades business gets a proper HiveForge site.
+            </p>
+          </div>
+        </Reveal>
 
         {/* Trade selector */}
+        <Reveal delay={100}>
         <div className="flex flex-wrap justify-center gap-3 mb-10">
           {examples.map((ex, i) => (
             <button
@@ -151,6 +155,7 @@ export default function BeforeAfterGallery() {
             Result: {current.result}
           </span>
         </div>
+        </Reveal>
       </div>
     </section>
   );

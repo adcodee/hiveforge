@@ -1,4 +1,5 @@
 import { Quote, Star } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 const testimonials = [
   {
@@ -14,20 +15,22 @@ export default function Testimonials() {
   return (
     <section className="py-20 md:py-28 bg-gray-50">
       <div className="max-w-6xl mx-auto px-5">
-        <div className="text-center mb-16">
-          <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
-            Real feedback
-          </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
-            What South West tradespeople say
-          </h2>
-        </div>
+        <Reveal>
+          <div className="text-center mb-16">
+            <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
+              Real feedback
+            </p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
+              What South West tradespeople say
+            </h2>
+          </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
+          {testimonials.map((t, i) => (
+            <Reveal key={t.name} delay={i * 100}>
             <div
-              key={t.name}
-              className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm"
+              className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
             >
               <Quote size={28} className="text-hive-orange/20 mb-4" />
               <p className="text-forge-black/60 leading-relaxed mb-6">
@@ -45,6 +48,7 @@ export default function Testimonials() {
               <p className="font-bold text-forge-black text-sm">{t.name}</p>
               <p className="text-forge-black/40 text-xs">{t.trade}</p>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

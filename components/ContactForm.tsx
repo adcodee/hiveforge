@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { sendContact } from "@/app/actions";
+import Reveal from "@/components/ui/Reveal";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -28,15 +29,18 @@ export default function ContactForm() {
     >
       <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-hive-orange/5 rounded-full blur-3xl" />
       <div className="relative z-10 max-w-2xl mx-auto px-5">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
-            Ready to get more booked jobs?
-          </h2>
-          <p className="text-white/50 text-lg">
-            Tell us your trade and area. We'll reply within 4 hours with a free proposal — no obligation.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
+              Ready to get more booked jobs?
+            </h2>
+            <p className="text-white/50 text-lg">
+              Tell us your trade and area. We'll reply within 4 hours with a free proposal — no obligation.
+            </p>
+          </div>
+        </Reveal>
 
+        <Reveal delay={150}>
         {submitted ? (
           <div className="text-center bg-white/10 rounded-2xl p-10 border border-white/10">
             <CheckCircle size={48} className="text-hive-amber mx-auto mb-4" />
@@ -91,6 +95,7 @@ export default function ContactForm() {
             </p>
           </form>
         )}
+        </Reveal>
       </div>
     </section>
   );

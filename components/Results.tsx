@@ -1,4 +1,5 @@
 import { PhoneCall, TrendingUp, Clock, Star, MessageSquare, Search, BarChart2 } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 const stats = [
   { icon: TrendingUp, value: "5–15", label: "Extra jobs per month", sub: "within 60 days" },
@@ -18,15 +19,18 @@ export default function Results() {
   return (
     <section id="results" className="py-20 md:py-28 bg-gradient-to-br from-forge-navy via-forge-navy to-[#0d2f4f] relative overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto px-5">
-        <div className="text-center mb-16">
-          <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
-            Realistic results
-          </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
-            What your new site delivers
-          </h2>
-        </div>
+        <Reveal>
+          <div className="text-center mb-16">
+            <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
+              Realistic results
+            </p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
+              What your new site delivers
+            </h2>
+          </div>
+        </Reveal>
 
+        <Reveal delay={100}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {stats.map(({ icon: Icon, value, label, sub }) => (
             <div
@@ -42,8 +46,10 @@ export default function Results() {
             </div>
           ))}
         </div>
+        </Reveal>
 
         {/* Sample monthly report — Full Retainer */}
+        <Reveal delay={200}>
         <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm">
           <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
             <div>
@@ -76,6 +82,7 @@ export default function Results() {
             Full Retainer clients receive this report monthly — plus a 15-minute strategy call.
           </p>
         </div>
+        </Reveal>
       </div>
     </section>
   );
