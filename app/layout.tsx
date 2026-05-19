@@ -57,7 +57,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script src="//code.tidio.co/dcivlg2ytv8uapewphrbovix1eeu87pr.js" async />
       </head>
       <body className="bg-white antialiased">
         {children}

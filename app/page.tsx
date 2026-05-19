@@ -13,7 +13,7 @@ import ServiceAreaMap from "@/components/ServiceAreaMap";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
-import FloatingCTA from "@/components/FloatingCTA";
+import ChatWidget from "@/components/ChatWidget";
 import CookieBanner from "@/components/CookieBanner";
 
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
       <FAQ />
       <ContactForm />
       <Footer />
-      <FloatingCTA />
+      <ChatWidget />
       <CookieBanner />
     </main>
   );
