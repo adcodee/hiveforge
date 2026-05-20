@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     url: "https://hiveforge.co.uk",
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: '/Icon-Logo.png',
+  },
 };
 
 /* ---------- JSON-LD structured data for Local Business ---------- */

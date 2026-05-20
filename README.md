@@ -79,19 +79,17 @@ npm run dev
 ## Next Steps for Adule
 
 ### Immediate (before launch)
-- [ ] Replace placeholder phone number in `FloatingCTA.tsx` with real number
-- [ ] Add HiveForge logo image to `/public/logo.png` and update Navbar
-- [ ] Connect contact form to a backend (options below)
+- [X] Replace placeholder phone number in `FloatingCTA.tsx` with real number
+- [X] Add HiveForge logo image to `/public/logo.png` and update Navbar
+- [x] Connect contact form to a backend (options below)
 - [ ] Replace placeholder testimonials with real client quotes
 - [ ] Add real before/after portfolio screenshots
 
 ### Form handler options
-- **Formspree** — Easiest. Sign up, get endpoint, replace form `onSubmit` with `fetch` to Formspree URL
-- **Next.js API route** — Create `app/api/contact/route.ts` that sends email via Resend/SendGrid
-- **Netlify Forms** — If deploying on Netlify instead of Vercel
+- **Next.js API route** — Create `app/api/contact/route.ts` that sends email via Resend/SendGrid X
 
 ### Post-launch integrations
-- [ ] **Tidio chatbot** — Paste script tag in `layout.tsx` `<head>` for AI chatbot
+- [X] **Tidio chatbot** — Paste script tag in `layout.tsx` `<head>` for AI chatbot
 - [ ] **Google Analytics 4** — Add GA4 script to `layout.tsx`, or use `@next/third-parties`
 - [ ] **Google Search Console** — Verify domain, submit sitemap
 - [ ] **Google Business Profile** — Link website, add service areas
@@ -128,4 +126,3 @@ After showing the demo: "I can have your version live by [day after tomorrow]. A
 - **Hosting:** Optimised for Vercel (also works on Netlify, Cloudflare Pages)
 - **SEO:** Full meta tags, Open Graph, JSON-LD LocalBusiness schema
 - **Performance:** No client-side JS except interactive components (form, nav menu, floating CTA). Static rendering for all content sections.
-test deploy
