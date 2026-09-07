@@ -1,12 +1,9 @@
 import Reveal from "@/components/ui/Reveal";
 
 const areas = [
-  { name: "Exeter", x: 52, y: 62 },
-  { name: "Plymouth", x: 30, y: 72 },
-  { name: "Truro", x: 12, y: 82 },
-  { name: "Bristol", x: 68, y: 28 },
-  { name: "Taunton", x: 55, y: 42 },
-  { name: "Barnstaple", x: 32, y: 48 },
+  { name: "Codford", x: 72, y: 32 },
+  { name: "Salisbury", x: 78, y: 38 },
+  { name: "Bath", x: 68, y: 28 },
 ];
 
 export default function ServiceAreaMap() {
@@ -79,7 +76,7 @@ export default function ServiceAreaMap() {
               ))}
             </svg>
             <p className="text-center text-forge-black/30 text-xs mt-2">
-              Approximate service coverage area
+              Home base. Software and web work is remote across the UK.
             </p>
           </div>
 
@@ -88,8 +85,8 @@ export default function ServiceAreaMap() {
             <div className="grid grid-cols-2 gap-4 mb-8">
               {[
                 { area: "Wiltshire", note: "Home base — Patch Access is live here" },
-                { area: "South West", note: "Devon, Cornwall, Somerset, Bristol" },
-                { area: "Rest of UK", note: "Remote software and web work" },
+                { area: "United Kingdom", note: "Remote software, web, design and AI" },
+                { area: "Your accounts", note: "Private fork — not a shared tenancy" },
               ].map(({ area, note }) => (
                 <div key={area} className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
                   <p className="font-bold text-forge-black text-sm">{area}</p>

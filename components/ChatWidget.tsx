@@ -11,7 +11,7 @@ interface Message {
 const GREETING: Message = {
   role: "assistant",
   content:
-    "Hi! I'm HiveForge's AI. Thinking about getting more jobs online? Ask me about packages, pricing, or what suits your trade.",
+    "Hi — HiveForge builds software, websites, design and AI. Ask about prices, Patch Access, or what a job looks like.",
 };
 
 export default function ChatWidget() {

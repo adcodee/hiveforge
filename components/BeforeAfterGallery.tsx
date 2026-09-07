@@ -13,7 +13,7 @@ export default function BeforeAfterGallery() {
               Brochure site vs a working system
             </h2>
             <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
-              Illustrative. No invented job counts.
+              A brochure site versus the operator system we actually ship.
             </p>
           </div>
         </Reveal>

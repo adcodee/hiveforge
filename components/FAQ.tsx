@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Can I click a real example?",
-    a: "https://www.patchaccess.uk — booking, ping, driver signup. That is a live Wiltshire taxi system, not a demo plumber.",
+    a: "https://www.patchaccess.uk — booking, ping, driver signup. A live Wiltshire taxi system HiveForge built and still runs.",
   },
   {
     q: "Do I have to use the Play Store or App Store?",

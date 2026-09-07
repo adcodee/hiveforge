@@ -13,7 +13,7 @@ export default function PortfolioShowcase() {
               Products, not filler clients
             </h2>
             <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
-              HiveForge does not invent testimonials. The work you can click is Patch Access.
+              Software, web, design and AI. The live example is Patch Access.
             </p>
           </div>
         </Reveal>

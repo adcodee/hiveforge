@@ -1,42 +1,41 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, X, Send } from "lucide-react";
+import { MessageCircle, Send } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 const DEMO_CONVERSATION = [
   {
     role: "bot",
-    text: "Hi — this is a HiveForge demo chatbot, not a real client. How can I help?",
+    text: "Hi — this is a labelled HiveForge demo, not a client. Ask about a website, an app, or a full operator system.",
   },
   {
     role: "user",
-    text: "My boiler stopped working this morning — it's making a banging noise.",
+    text: "We need a booking site and a staff app for the drivers.",
   },
   {
     role: "bot",
-    text: "Sorry to hear that! A banging boiler usually means a blockage or kettling. Dave covers emergency call-outs across Exeter 7 days a week. Can I grab your postcode to confirm you're in the area?",
+    text: "That's the operator system — same shape as Patch Access. Customer web £400, driver portal £250, admin desk £350. Full package is £2,000 + VAT.",
   },
   {
     role: "user",
-    text: "EX4 4QJ",
+    text: "What about just a website first?",
   },
   {
     role: "bot",
-    text: "Perfect — that's covered. Dave's earliest slot today is 2 pm. Emergency call-out is £85 + parts. Shall I book that in, or would you prefer Dave to give you a quick call first?",
+    text: "Core website is £997 one-off, live in 48 hours. Growth retainer is £97/month if you want the chatbot and SEO posts kept on.",
   },
   {
     role: "user",
-    text: "Please get him to call me.",
+    text: "And we only pay if we're happy?",
   },
   {
     role: "bot",
-    text: "Done! Dave will call you within 30 minutes. While you wait, make sure your boiler pressure is above 1 bar — there's a guide on the website if needed. Anything else?",
+    text: "Yes. No deposit. You walk if it isn't right. Want Adule to quote your exact scope? Use the form or call 07340 499769.",
   },
 ];
 
 export default function ChatbotDemo() {
-  const [open, setOpen] = useState(false);
   const [step, setStep] = useState(0);
   const [input, setInput] = useState("");
 
@@ -57,25 +56,24 @@ export default function ChatbotDemo() {
     <section id="chatbot" className="py-20 md:py-28 bg-gradient-to-br from-forge-navy via-forge-navy to-[#0d2f4f] relative overflow-hidden noise-overlay">
       <div className="relative z-10 max-w-6xl mx-auto px-5">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Copy */}
           <Reveal>
           <div>
             <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
-              Growth &amp; Full Retainer
+              Design &amp; AI
             </p>
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
               AI on the product,{" "}
               <span className="text-gradient-orange">not a gimmick widget</span>
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-6">
-              Chat on the site, quotes, or a full assistant. This window is a labelled demo, not a real client.
+              Chat on the site, quotes, or a full assistant. This window is a labelled demo — the prices in it are the same ones on this page.
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "Answers emergency enquiries at midnight",
-                "Knows your prices, area, and services",
-                "Books jobs or captures lead details",
-                "Hands off to you when needed",
+                "Answers enquiries when you are not at the desk",
+                "Knows website and software prices",
+                "Books a call or captures lead details",
+                "Hands off to Adule when needed",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2 text-white/70 text-sm">
                   <span className="text-hive-orange mt-0.5 shrink-0">✓</span>
@@ -88,19 +86,16 @@ export default function ChatbotDemo() {
               className="inline-flex items-center gap-2 bg-hive-orange text-white font-bold px-6 py-3.5 rounded-xl forge-glow hover:scale-[1.02] transition-transform"
             >
               <MessageCircle size={18} />
-              Get a chatbot on your site
+              See prices
             </a>
           </div>
           </Reveal>
 
-          {/* Demo chat window */}
           <Reveal delay={200}>
           <div className="flex justify-center md:justify-end">
             <div className="w-full max-w-sm">
-              {/* Phone chrome */}
               <div className="bg-gray-900 rounded-[2rem] p-3 shadow-2xl ring-1 ring-white/10">
                 <div className="bg-white rounded-[1.5rem] overflow-hidden">
-                  {/* Chat header */}
                   <div className="bg-forge-navy px-4 py-3 flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-hive-orange flex items-center justify-center text-white font-bold text-xs shrink-0">
                       HF
@@ -114,7 +109,6 @@ export default function ChatbotDemo() {
                     </div>
                   </div>
 
-                  {/* Messages */}
                   <div className="h-72 overflow-y-auto p-4 space-y-3 bg-gray-50">
                     {visible.map((msg, i) => (
                       <div
@@ -145,7 +139,6 @@ export default function ChatbotDemo() {
                     )}
                   </div>
 
-                  {/* Input */}
                   <div className="flex items-center gap-2 p-3 border-t border-gray-100 bg-white">
                     <input
                       type="text"
@@ -165,7 +158,6 @@ export default function ChatbotDemo() {
                   </div>
                 </div>
 
-                {/* Advance button below phone */}
                 {!isDone && (
                   <button
                     onClick={advance}
@@ -176,7 +168,7 @@ export default function ChatbotDemo() {
                 )}
               </div>
               <p className="text-center text-white/30 text-xs mt-4">
-                Demo — this is how your AI chatbot works
+                Demo — labelled, with the prices from this page
               </p>
             </div>
           </div>

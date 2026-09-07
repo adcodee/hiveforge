@@ -8,7 +8,7 @@ import PortfolioShowcase from "@/components/PortfolioShowcase";
 import Results from "@/components/Results";
 import Pricing from "@/components/Pricing";
 import ChatbotDemo from "@/components/ChatbotDemo";
-import Testimonials from "@/components/Testimonials";
+import Work from "@/components/Work";
 import ServiceAreaMap from "@/components/ServiceAreaMap";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
@@ -23,7 +23,7 @@ export default function Home() {
       <Hero />
       <TrustBadges />
       <BrandStory />
-      <Testimonials />
+      <Work />
       <PortfolioShowcase />
       <BeforeAfterGallery />
       <Pricing />

@@ -1,6 +1,6 @@
 import Reveal from "@/components/ui/Reveal";
 
-export default function Testimonials() {
+export default function Work() {
   return (
     <section id="work" className="py-20 md:py-28 bg-gray-50">
       <div className="max-w-6xl mx-auto px-5">
@@ -14,7 +14,7 @@ export default function Testimonials() {
             </h2>
             <p className="text-forge-black/50 text-lg max-w-2xl mx-auto">
               A Wiltshire taxi operator system HiveForge built and still runs.
-              Not a mockup. Not a made-up plumber.
+              Booking, staff desk, drivers, payments — click it.
             </p>
           </div>
         </Reveal>

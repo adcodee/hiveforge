@@ -54,7 +54,7 @@ export default function ContactForm() {
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-white/60 text-sm font-medium mb-1.5">Your name</label>
-                <input name="name" type="text" required placeholder="e.g. Dave" className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-hive-orange transition-colors" />
+                <input name="name" type="text" required placeholder="Your name" className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-hive-orange transition-colors" />
               </div>
               <div>
                 <label className="block text-white/60 text-sm font-medium mb-1.5">Phone or email</label>
