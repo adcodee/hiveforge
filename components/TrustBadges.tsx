@@ -2,36 +2,10 @@ import Reveal from "@/components/ui/Reveal";
 
 export default function TrustBadges() {
   const badges = [
-    {
-      label: "Gas Safe Registered",
-      color: "#003087",
-      abbr: "GAS SAFE",
-      sub: "Registered",
-    },
-    {
-      label: "NICEIC Approved",
-      color: "#D4002A",
-      abbr: "NICEIC",
-      sub: "Approved Contractor",
-    },
-    {
-      label: "NAPIT Registered",
-      color: "#FF6B00",
-      abbr: "NAPIT",
-      sub: "Registered",
-    },
-    {
-      label: "Which? Trusted Trader",
-      color: "#00A0A0",
-      abbr: "Which?",
-      sub: "Trusted Trader",
-    },
-    {
-      label: "CHAS Accredited",
-      color: "#1A1A1A",
-      abbr: "CHAS",
-      sub: "Accredited",
-    },
+    { label: "Software", color: "#0A2540", abbr: "SW", sub: "Apps & backends" },
+    { label: "Web", color: "#FF851B", abbr: "WEB", sub: "Sites in 48 hours" },
+    { label: "Design", color: "#FFAA00", abbr: "UI", sub: "Brand & product" },
+    { label: "AI", color: "#1C1C1C", abbr: "AI", sub: "Chat & automation" },
   ];
 
   return (
@@ -39,7 +13,7 @@ export default function TrustBadges() {
       <div className="max-w-6xl mx-auto px-5">
         <Reveal>
           <p className="text-center text-forge-black/40 text-xs uppercase tracking-widest font-semibold mb-6">
-            We build sites for accredited, trusted tradespeople
+            What HiveForge actually does
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
             {badges.map(({ label, color, abbr, sub }) => (

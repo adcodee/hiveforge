@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#how-it-works", label: "How It Works" },
-  { href: "#results", label: "Results" },
+  { href: "#work", label: "Work" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#contact", label: "Get Started" },
+  { href: "#how-it-works", label: "How it works" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {

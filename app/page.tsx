@@ -23,13 +23,13 @@ export default function Home() {
       <Hero />
       <TrustBadges />
       <BrandStory />
-      <HowItWorks />
-      <BeforeAfterGallery />
-      <PortfolioShowcase />
-      <Results />
-      <Pricing />
-      <ChatbotDemo />
       <Testimonials />
+      <PortfolioShowcase />
+      <BeforeAfterGallery />
+      <Pricing />
+      <Results />
+      <HowItWorks />
+      <ChatbotDemo />
       <ServiceAreaMap />
       <FAQ />
       <ContactForm />

@@ -3,21 +3,21 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "HiveForge — AI Websites for South West Trades | Live in 48 Hours",
+  title: "HiveForge — Software, web, design and AI",
   description:
-    "Beehive-mind AI websites forged for South West trades. Plumbers, electricians & builders in Exeter, Devon, Cornwall & Bristol get a high-converting site live in 48 hours. 5–15 extra jobs per month.",
+    "HiveForge is a software, web development, design and AI agency. Websites, custom apps and backend systems. Live example: Patch Access.",
   keywords: [
-    "AI websites for tradesmen",
-    "website for plumbers Exeter",
-    "website for electricians Devon",
-    "trades website builder South West",
-    "AI web design Cornwall",
-    "tradesman website Bristol",
+    "software agency UK",
+    "web development Wiltshire",
+    "AI agency",
+    "custom app development",
+    "taxi booking software",
+    "HiveForge",
   ],
   openGraph: {
-    title: "HiveForge — AI Websites for South West Trades",
+    title: "HiveForge — Software, web, design and AI",
     description:
-      "High-converting AI websites for trades businesses. Live in 48 hours. 5–15 extra jobs per month.",
+      "Websites, custom software and AI, built by HiveForge. See Patch Access live.",
     type: "website",
     locale: "en_GB",
     url: "https://hiveforge.co.uk",
@@ -34,18 +34,12 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "HiveForge",
   description:
-    "AI-powered website design for South West UK trades businesses. Live in 48 hours.",
+    "Software, web development, design and AI. Websites, custom apps and backend systems.",
   url: "https://hiveforge.co.uk",
-  areaServed: [
-    { "@type": "City", name: "Exeter" },
-    { "@type": "City", name: "Bristol" },
-    { "@type": "AdministrativeArea", name: "Devon" },
-    { "@type": "AdministrativeArea", name: "Cornwall" },
-    { "@type": "AdministrativeArea", name: "Somerset" },
-  ],
+  areaServed: { "@type": "Country", name: "United Kingdom" },
   founder: { "@type": "Person", name: "Adule" },
   priceRange: "££",
-  serviceType: "Web Design",
+  serviceType: ["Software Development", "Web Design", "AI"],
 };
 
 export default function RootLayout({

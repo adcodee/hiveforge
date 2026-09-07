@@ -6,31 +6,31 @@ const steps = [
     icon: Search,
     num: "01",
     title: "Research",
-    body: "We look at your trade, your area and what customers need right now.",
+    body: "We look at the job: website, app, backend, or all three.",
   },
   {
     icon: Code,
     num: "02",
     title: "Build",
-    body: "We create your full website with all the right tools for leads.",
+    body: "We build the site, the product, or the system — with your brand on it.",
   },
   {
     icon: Rocket,
     num: "03",
     title: "Go live",
-    body: "Your site is live in 48 hours on fast, reliable hosting.",
+    body: "Websites go live in 48 hours. Software follows the quoted itinerary.",
   },
   {
     icon: Video,
     num: "04",
     title: "Onboarding call",
-    body: "A 30-minute call plus a personalised Loom video showing you exactly how to update your site, swap photos, and use your AI chatbot.",
+    body: "A call plus a Loom: how to run what we built, not a 40-page handover PDF.",
   },
   {
     icon: BarChart3,
     num: "05",
     title: "Keep growing",
-    body: "Optional monthly support adds chatbots, SEO posts and updates.",
+    body: "Optional retainer for hosting, fixes, and small changes. Bigger work is quoted.",
   },
 ];
 
@@ -44,10 +44,10 @@ export default function HowItWorks() {
               Simple process
             </p>
             <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
-              How we build your site
+              How a job runs
             </h2>
             <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
-              Your site is live in 48 hours. No long waits.
+              Websites in 48 hours. Custom software on a short, named itinerary.
             </p>
           </div>
         </Reveal>

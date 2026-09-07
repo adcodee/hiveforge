@@ -1,56 +1,79 @@
-import { Quote, Star } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
-
-const testimonials = [
-  {
-    name: "John Smith",
-    trade: "Plumber, Bristol",
-    text: "HiveForge transformed my online presence. I went from struggling to get leads to having a steady stream of customers. The website looks fantastic and the local SEO has really made a difference.",
-    stars: 5,
-  },
-
-];
 
 export default function Testimonials() {
   return (
-    <section className="py-20 md:py-28 bg-gray-50">
+    <section id="work" className="py-20 md:py-28 bg-gray-50">
       <div className="max-w-6xl mx-auto px-5">
         <Reveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <p className="text-hive-orange font-semibold text-sm uppercase tracking-wider mb-3">
-              Real feedback
+              Live work
             </p>
             <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
-              What South West tradespeople say
+              Patch Access
             </h2>
+            <p className="text-forge-black/50 text-lg max-w-2xl mx-auto">
+              A Wiltshire taxi operator system HiveForge built and still runs.
+              Not a mockup. Not a made-up plumber.
+            </p>
           </div>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 100}>
-            <div
-              className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-            >
-              <Quote size={28} className="text-hive-orange/20 mb-4" />
-              <p className="text-forge-black/60 leading-relaxed mb-6">
-                &ldquo;{t.text}&rdquo;
-              </p>
-              <div className="flex items-center gap-1 mb-2">
-                {Array.from({ length: t.stars }).map((_, i) => (
-                  <Star
-                    key={i}
-                    size={14}
-                    className="text-hive-amber fill-hive-amber"
-                  />
-                ))}
-              </div>
-              <p className="font-bold text-forge-black text-sm">{t.name}</p>
-              <p className="text-forge-black/40 text-xs">{t.trade}</p>
+        <Reveal delay={80}>
+          <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 md:p-10 mb-8">
+            <p className="text-forge-black/70 leading-relaxed mb-6 max-w-3xl">
+              Customer booking on the web, a staff desk for jobs and operators,
+              driver tools, payments, maps and calendar. Same stack we would
+              fork onto another operator&apos;s name.
+            </p>
+            <ul className="grid sm:grid-cols-2 gap-3 text-sm text-forge-black/70 mb-8">
+              {[
+                "Customer website and online booking",
+                "One-tap ping for a pickup",
+                "Admin desk and operator reconciliation",
+                "Driver portal",
+                "Android test apps (sideload, not store listings yet)",
+                "AI chat on the site",
+              ].map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="text-hive-orange">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://www.patchaccess.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-hive-orange text-white font-bold px-5 py-3 rounded-xl hover:bg-hive-orange/90"
+              >
+                Open the live site
+              </a>
+              <a
+                href="https://www.patchaccess.uk/ping"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-forge-navy text-white font-semibold px-5 py-3 rounded-xl hover:bg-forge-navy/90"
+              >
+                Try ping
+              </a>
             </div>
-            </Reveal>
-          ))}
-        </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={120}>
+          <div className="rounded-3xl bg-forge-navy text-white p-8 md:p-10">
+            <p className="text-hive-orange font-semibold text-sm mb-2">
+              The HiveForge guarantee
+            </p>
+            <p className="text-xl md:text-2xl font-bold leading-snug mb-4">
+              I build it first. You only pay if you are happy. No deposit, no
+              lock-in — if it is not right, you walk away owing nothing.
+            </p>
+            <p className="text-white/50 text-sm">Adule, HiveForge</p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ import Reveal from "@/components/ui/Reveal";
 const DEMO_CONVERSATION = [
   {
     role: "bot",
-    text: "Hi! I'm the AI assistant for Dave's Plumbing. How can I help you today?",
+    text: "Hi — this is a HiveForge demo chatbot, not a real client. How can I help?",
   },
   {
     role: "user",
@@ -64,11 +64,11 @@ export default function ChatbotDemo() {
               Growth &amp; Full Retainer
             </p>
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
-              Your site books jobs{" "}
-              <span className="text-gradient-orange">while you sleep</span>
+              AI on the product,{" "}
+              <span className="text-gradient-orange">not a gimmick widget</span>
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-6">
-              Every Growth and Full Retainer client gets a trained AI chatbot that answers customer questions, gives quotes, and books jobs — 24 hours a day, 7 days a week.
+              Chat on the site, quotes, or a full assistant. This window is a labelled demo, not a real client.
             </p>
             <ul className="space-y-3 mb-8">
               {[
@@ -103,10 +103,10 @@ export default function ChatbotDemo() {
                   {/* Chat header */}
                   <div className="bg-forge-navy px-4 py-3 flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-hive-orange flex items-center justify-center text-white font-bold text-xs shrink-0">
-                      D
+                      HF
                     </div>
                     <div>
-                      <p className="text-white font-bold text-sm">Dave's Plumbing AI</p>
+                      <p className="text-white font-bold text-sm">Demo chatbot</p>
                       <p className="text-green-400 text-xs flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
                         Online now

@@ -25,7 +25,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-xl font-bold text-forge-black mb-3">1. Who we are</h2>
             <p>
-              HiveForge is a trading name operated by Adule Grant, providing AI-assisted web design and digital marketing services to trades businesses in the South West UK. Our website address is{" "}
+              HiveForge is a trading name operated by Adule Grant, providing software, web development, design and AI services. Our website address is{" "}
               <a href="https://hiveforge.co.uk" className="text-hive-orange hover:underline">
                 hiveforge.co.uk
               </a>

@@ -32,10 +32,10 @@ export default function ContactForm() {
         <Reveal>
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
-              Ready to get more booked jobs?
+              Tell us what you need built
             </h2>
             <p className="text-white/50 text-lg">
-              Tell us your trade and area. We'll reply within 4 hours with a free proposal — no obligation.
+              Website, app, backend, or the lot. Reply within a working day. No obligation.
             </p>
           </div>
         </Reveal>
@@ -63,13 +63,13 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label className="block text-white/60 text-sm font-medium mb-1.5">Your trade & area</label>
-              <input name="business" type="text" required placeholder="e.g. Plumber in Exeter" className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-hive-orange transition-colors" />
+              <label className="block text-white/60 text-sm font-medium mb-1.5">Business and what you need</label>
+              <input name="business" type="text" required placeholder="e.g. taxi operator — booking app, or a trade website" className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-hive-orange transition-colors" />
             </div>
 
             <div>
               <label className="block text-white/60 text-sm font-medium mb-1.5">Anything else? (optional)</label>
-              <textarea name="message" rows={3} placeholder="Got a current site? Need emergency CTAs? Tell us anything." className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-hive-orange transition-colors resize-none" />
+              <textarea name="message" rows={3} placeholder="Website, custom software, or both? Links help." className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-hive-orange transition-colors resize-none" />
             </div>
 
             <button

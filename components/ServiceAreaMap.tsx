@@ -19,10 +19,10 @@ export default function ServiceAreaMap() {
               Where we work
             </p>
             <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
-              South West UK
+              Based in Wiltshire
             </h2>
             <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
-              Based in the South West, serving trades across Devon, Cornwall, Somerset, Bristol and beyond.
+              HiveForge is run from Codford. Work is remote across the UK. The live operator example is Patch Access, Wiltshire.
             </p>
           </div>
         </Reveal>
@@ -87,16 +87,13 @@ export default function ServiceAreaMap() {
           <div>
             <div className="grid grid-cols-2 gap-4 mb-8">
               {[
-                { area: "Exeter & East Devon", trades: "Plumbers, Electricians, Builders" },
-                { area: "Plymouth & West Devon", trades: "Gas Engineers, Roofers" },
-                { area: "Cornwall", trades: "Builders, Landscapers, Electricians" },
-                { area: "Bristol & Bath", trades: "All trades welcome" },
-                { area: "Taunton & Somerset", trades: "Plumbers, HVAC, Painters" },
-                { area: "North Devon", trades: "Builders, Roofers, Electricians" },
-              ].map(({ area, trades }) => (
+                { area: "Wiltshire", note: "Home base — Patch Access is live here" },
+                { area: "South West", note: "Devon, Cornwall, Somerset, Bristol" },
+                { area: "Rest of UK", note: "Remote software and web work" },
+              ].map(({ area, note }) => (
                 <div key={area} className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
                   <p className="font-bold text-forge-black text-sm">{area}</p>
-                  <p className="text-forge-black/40 text-xs mt-0.5">{trades}</p>
+                  <p className="text-forge-black/40 text-xs mt-0.5">{note}</p>
                 </div>
               ))}
             </div>

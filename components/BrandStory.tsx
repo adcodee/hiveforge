@@ -8,10 +8,10 @@ export default function BrandStory() {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
-              Our simple approach
+              Four things, one shop
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Practical websites that get you more jobs without you managing marketing.
+              Software, web, design and AI. Same person builds the public face and the system behind it.
             </p>
           </div>
         </Reveal>
@@ -20,25 +20,25 @@ export default function BrandStory() {
           {[
             {
               icon: Brain,
-              title: "Fast delivery",
-              subtitle: "48 hours",
-              body: "We research your trade and area then build and launch your site in 48 hours.",
+              title: "Software",
+              subtitle: "Apps and backends",
+              body: "Booking systems, admin desks, driver apps, APIs. Forked from a live product, not a slide deck.",
               color: "from-hive-orange to-hive-amber",
               delay: 0,
             },
             {
               icon: Hammer,
-              title: "Mobile-first design",
-              subtitle: "Works on any phone",
-              body: "Customers can call or request a quote instantly while you're on the job.",
+              title: "Web & design",
+              subtitle: "Sites and brand",
+              body: "Marketing sites live in 48 hours. Custom product UI when a brochure site is the wrong tool.",
               color: "from-hive-amber to-yellow-400",
               delay: 100,
             },
             {
               icon: Zap,
-              title: "Built-in leads",
-              subtitle: "24/7 tools",
-              body: "Emergency forms, call buttons and local SEO bring jobs in even when you're working.",
+              title: "AI",
+              subtitle: "Chat and automation",
+              body: "Assistants on the site, quote handling, and the same stack we use to ship work quickly.",
               color: "from-yellow-400 to-hive-orange",
               delay: 200,
             },
