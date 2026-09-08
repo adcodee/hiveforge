@@ -1,9 +1,15 @@
 import Reveal from "@/components/ui/Reveal";
 
+// Five, well spread out - the full seven-town list lives in the paragraph
+// above (that's what search engines actually index; this SVG is decorative).
+// Packing all seven pins into this small a shape produced overlapping,
+// unreadable labels - caught in a real render, not just reading the code.
 const areas = [
-  { name: "Codford", x: 72, y: 32 },
-  { name: "Salisbury", x: 78, y: 38 },
-  { name: "Bath", x: 68, y: 28 },
+  { name: "Codford", x: 45, y: 55, anchor: "start" as const, dx: 4, dy: 1 },
+  { name: "Salisbury", x: 58, y: 68, anchor: "start" as const, dx: 4, dy: 1 },
+  { name: "Bath", x: 55, y: 25, anchor: "start" as const, dx: 4, dy: 1 },
+  { name: "Trowbridge", x: 38, y: 38, anchor: "end" as const, dx: -4, dy: 1 },
+  { name: "Andover", x: 75, y: 60, anchor: "start" as const, dx: 4, dy: 1 },
 ];
 
 export default function ServiceAreaMap() {
@@ -16,10 +22,12 @@ export default function ServiceAreaMap() {
               Where we work
             </p>
             <h2 className="text-3xl md:text-5xl font-extrabold text-forge-black mb-4">
-              Based in Wiltshire
+              South West UK, based in Wiltshire
             </h2>
             <p className="text-forge-black/50 text-lg max-w-xl mx-auto">
-              HiveForge is run from Codford. Work is remote across the UK. The live operator example is Patch Access, Wiltshire.
+              HiveForge is run from Codford and takes on work across Salisbury, Warminster,
+              Trowbridge, Bath, Devizes, Amesbury and Andover first. The live operator
+              example, Patch Access, runs on the same patch.
             </p>
           </div>
         </Reveal>
@@ -47,7 +55,7 @@ export default function ServiceAreaMap() {
                 opacity="0.12"
               />
               {/* Area dots */}
-              {areas.map(({ name, x, y }) => (
+              {areas.map(({ name, x, y, anchor, dx, dy }) => (
                 <g key={name}>
                   <circle
                     cx={x}
@@ -64,9 +72,10 @@ export default function ServiceAreaMap() {
                     opacity="0.15"
                   />
                   <text
-                    x={x + 3}
-                    y={y + 1}
-                    fontSize="3.5"
+                    x={x + dx}
+                    y={y + dy}
+                    textAnchor={anchor}
+                    fontSize="4.2"
                     fill="#0A2540"
                     fontWeight="600"
                   >
@@ -84,8 +93,8 @@ export default function ServiceAreaMap() {
           <div>
             <div className="grid grid-cols-2 gap-4 mb-8">
               {[
+                { area: "South West UK", note: "Salisbury, Bath, Trowbridge and around — the primary patch" },
                 { area: "Wiltshire", note: "Home base — Patch Access is live here" },
-                { area: "United Kingdom", note: "Remote software, web, design and AI" },
                 { area: "Your accounts", note: "Private fork — not a shared tenancy" },
               ].map(({ area, note }) => (
                 <div key={area} className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">

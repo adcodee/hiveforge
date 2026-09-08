@@ -9,12 +9,14 @@ import Results from "@/components/Results";
 import Pricing from "@/components/Pricing";
 import ChatbotDemo from "@/components/ChatbotDemo";
 import Work from "@/components/Work";
+import FounderNote from "@/components/FounderNote";
 import ServiceAreaMap from "@/components/ServiceAreaMap";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import CookieBanner from "@/components/CookieBanner";
+import FloatingCTA from "@/components/FloatingCTA";
 
 export default function Home() {
   return (
@@ -24,6 +26,7 @@ export default function Home() {
       <TrustBadges />
       <BrandStory />
       <Work />
+      <FounderNote />
       <PortfolioShowcase />
       <BeforeAfterGallery />
       <Pricing />
@@ -35,6 +38,7 @@ export default function Home() {
       <ContactForm />
       <Footer />
       <ChatWidget />
+      <FloatingCTA />
       <CookieBanner />
     </main>
   );

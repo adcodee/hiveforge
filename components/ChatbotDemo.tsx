@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, Send } from "lucide-react";
+import { MessageCircle, ArrowDown } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 const DEMO_CONVERSATION = [
@@ -37,18 +37,12 @@ const DEMO_CONVERSATION = [
 
 export default function ChatbotDemo() {
   const [step, setStep] = useState(0);
-  const [input, setInput] = useState("");
 
   const visible = DEMO_CONVERSATION.slice(0, step + 1);
   const isDone = step >= DEMO_CONVERSATION.length - 1;
+  const nextLine = !isDone ? DEMO_CONVERSATION[step + 1] : null;
 
   const advance = () => {
-    if (!isDone) setStep((s) => s + 1);
-  };
-
-  const handleSend = () => {
-    if (!input.trim()) return;
-    setInput("");
     if (!isDone) setStep((s) => s + 1);
   };
 
@@ -126,7 +120,7 @@ export default function ChatbotDemo() {
                         </div>
                       </div>
                     ))}
-                    {!isDone && (
+                    {nextLine?.role === "bot" && (
                       <div className="flex justify-start">
                         <div className="bg-white border border-gray-100 shadow-sm rounded-2xl rounded-bl-sm px-3 py-2">
                           <span className="flex gap-1 items-center">
@@ -139,31 +133,32 @@ export default function ChatbotDemo() {
                     )}
                   </div>
 
-                  <div className="flex items-center gap-2 p-3 border-t border-gray-100 bg-white">
-                    <input
-                      type="text"
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      onKeyDown={(e) => e.key === "Enter" && handleSend()}
-                      placeholder="Type a message…"
-                      className="flex-1 text-xs bg-gray-100 rounded-full px-3 py-2 focus:outline-none text-forge-black"
-                    />
-                    <button
-                      onClick={handleSend}
-                      disabled={isDone}
-                      className="w-7 h-7 bg-hive-orange rounded-full flex items-center justify-center disabled:opacity-40"
-                    >
-                      <Send size={12} className="text-white" />
-                    </button>
+                  {/* Tappable next line instead of a text box that (previously)
+                      ignored whatever you actually typed and advanced the
+                      script regardless - honest about being scripted rather
+                      than pretending to read input. */}
+                  <div className="p-3 border-t border-gray-100 bg-white min-h-[52px] flex items-center">
+                    {nextLine?.role === "user" ? (
+                      <button
+                        onClick={advance}
+                        className="w-full text-left text-xs bg-hive-orange/10 text-hive-orange font-medium rounded-full px-4 py-2.5 hover:bg-hive-orange/20 transition-colors"
+                      >
+                        Tap: &ldquo;{nextLine.text}&rdquo;
+                      </button>
+                    ) : (
+                      !isDone && (
+                        <p className="text-xs text-forge-black/30 px-1">Demo chat — tap below to continue</p>
+                      )
+                    )}
                   </div>
                 </div>
 
                 {!isDone && (
                   <button
                     onClick={advance}
-                    className="w-full mt-3 text-white/50 text-xs py-1 hover:text-white/80 transition-colors"
+                    className="w-full mt-3 flex items-center justify-center gap-1.5 text-white/50 text-xs py-1 hover:text-white/80 transition-colors"
                   >
-                    Continue demo ↓
+                    Continue demo <ArrowDown size={12} />
                   </button>
                 )}
               </div>

@@ -12,17 +12,21 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-6 text-sm text-white/40">
+          <div className="flex flex-wrap items-center gap-6 text-sm text-white/40">
             <a href="#work" className="hover:text-white/70 transition-colors">Work</a>
             <a href="#pricing" className="hover:text-white/70 transition-colors">Pricing</a>
             <a href="#contact" className="hover:text-white/70 transition-colors">Contact</a>
+            <a href="tel:+447340499769" className="hover:text-white/70 transition-colors">07340 499769</a>
+            <a href="mailto:adulegrant@hiveforge.co.uk" className="hover:text-white/70 transition-colors">
+              adulegrant@hiveforge.co.uk
+            </a>
           </div>
         </div>
 
         <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/30">
           <p>© {new Date().getFullYear()} HiveForge. All rights reserved.</p>
           <p>
-            Based in Wiltshire.{" "}
+            Based in Wiltshire, working the South West.{" "}
             <a href="/privacy" className="underline hover:text-white/50">
               Privacy Policy
             </a>

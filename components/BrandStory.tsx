@@ -1,4 +1,4 @@
-import { Brain, Hammer, Zap } from "lucide-react";
+import { Brain, Hammer, Palette, Zap } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 export default function BrandStory() {
@@ -16,7 +16,7 @@ export default function BrandStory() {
           </div>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
               icon: Brain,
@@ -28,19 +28,27 @@ export default function BrandStory() {
             },
             {
               icon: Hammer,
-              title: "Web & design",
-              subtitle: "Sites and brand",
-              body: "Marketing sites live in 48 hours. Custom product UI when a brochure site is the wrong tool.",
+              title: "Web",
+              subtitle: "Sites that convert",
+              body: "Marketing sites live in 48 hours. Local SEO and a call button that actually works on a phone.",
               color: "from-hive-amber to-yellow-400",
-              delay: 100,
+              delay: 80,
+            },
+            {
+              icon: Palette,
+              title: "Design",
+              subtitle: "Brand and product UI",
+              body: "Brand on the product, not a logo sticker. Custom product UI when a brochure site is the wrong tool.",
+              color: "from-yellow-400 to-hive-orange",
+              delay: 160,
             },
             {
               icon: Zap,
               title: "AI",
               subtitle: "Chat and automation",
               body: "Assistants on the site, quote handling, and the same stack we use to ship work quickly.",
-              color: "from-yellow-400 to-hive-orange",
-              delay: 200,
+              color: "from-hive-orange to-forge-navy",
+              delay: 240,
             },
           ].map(({ icon: Icon, title, subtitle, body, color, delay }) => (
             <Reveal key={title} delay={delay}>

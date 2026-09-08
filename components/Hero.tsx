@@ -43,9 +43,9 @@ export default function Hero() {
             </a>
             <a
               href="#work"
-              className="inline-flex items-center justify-center gap-2 bg-forge-navy text-white text-lg font-semibold px-8 py-4 rounded-xl hover:bg-forge-navy/90 transition-colors"
+              className="inline-flex items-center justify-center gap-2 border-2 border-forge-navy/20 text-forge-navy text-lg font-semibold px-8 py-4 rounded-xl hover:bg-forge-navy/5 transition-colors"
             >
-              Live example
+              See a live example
             </a>
           </div>
 

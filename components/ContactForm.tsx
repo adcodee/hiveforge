@@ -35,7 +35,7 @@ export default function ContactForm() {
               Tell us what you need built
             </h2>
             <p className="text-white/50 text-lg">
-              Website, app, backend, or the lot. Reply within a working day. No obligation.
+              Website, app, backend, or the lot. Reply within 4 hours. No obligation.
             </p>
           </div>
         </Reveal>

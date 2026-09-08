@@ -20,7 +20,7 @@ export async function sendContact(formData: FormData) {
         <h2>New lead from hiveforge.co.uk</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Contact:</strong> ${contact}</p>
-        <p><strong>Trade & Area:</strong> ${business}</p>
+        <p><strong>Business & need:</strong> ${business}</p>
         <p><strong>Message:</strong> ${message}</p>
         <hr>
         <p><small>Sent via HiveForge website • ${new Date().toLocaleString("en-GB")}</small></p>

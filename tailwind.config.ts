@@ -18,8 +18,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['"DM Sans"', "sans-serif"],
-        body: ['"DM Sans"', "sans-serif"],
+        display: ["var(--font-dm-sans)", "sans-serif"],
+        body: ["var(--font-dm-sans)", "sans-serif"],
       },
       animation: {
         "fade-up": "fadeUp 0.6s ease-out forwards",
