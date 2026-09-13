@@ -7,7 +7,7 @@ import Reveal from "@/components/ui/Reveal";
 const DEMO_CONVERSATION = [
   {
     role: "bot",
-    text: "Hi — this is a labelled HiveForge demo, not a client. Ask about a website, an app, or a full operator system.",
+    text: "Hi — this is a labelled HiveForge demo, not a client. Ask about a website, Operator, or Growth Enterprise.",
   },
   {
     role: "user",
@@ -15,7 +15,7 @@ const DEMO_CONVERSATION = [
   },
   {
     role: "bot",
-    text: "That's the operator system — same shape as Patch Access. Customer web £400, driver portal £250, admin desk £350. Full package is £2,000 + VAT.",
+    text: "That's Growth Enterprise — same chassis as Patch Access. £1,995 setup + £229/month. Operator (desk only) is £795 + £99/month if you don't need the public site yet.",
   },
   {
     role: "user",
@@ -27,11 +27,11 @@ const DEMO_CONVERSATION = [
   },
   {
     role: "user",
-    text: "And we only pay if we're happy?",
+    text: "Do we pay VAT?",
   },
   {
     role: "bot",
-    text: "Yes. No deposit. You walk if it isn't right. Want Adule to quote your exact scope? Use the form or call 07340 499769.",
+    text: "No. Prices as shown — not VAT registered. Operator software takes a 50% setup deposit. Want Adule to quote your exact scope? Use the form or call 07340 499769.",
   },
 ];
 
@@ -133,10 +133,6 @@ export default function ChatbotDemo() {
                     )}
                   </div>
 
-                  {/* Tappable next line instead of a text box that (previously)
-                      ignored whatever you actually typed and advanced the
-                      script regardless - honest about being scripted rather
-                      than pretending to read input. */}
                   <div className="p-3 border-t border-gray-100 bg-white min-h-[52px] flex items-center">
                     {nextLine?.role === "user" ? (
                       <button

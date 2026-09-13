@@ -13,8 +13,8 @@ export default function Work() {
               Patch Access
             </h2>
             <p className="text-forge-black/50 text-lg max-w-2xl mx-auto">
-              A Wiltshire taxi operator system HiveForge built and still runs.
-              Booking, staff desk, drivers, payments — click it.
+              A Wiltshire taxi system HiveForge built and still runs.
+              Booking, staff desk, drivers — click it.
             </p>
           </div>
         </Reveal>
@@ -22,15 +22,15 @@ export default function Work() {
         <Reveal delay={80}>
           <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 md:p-10 mb-8">
             <p className="text-forge-black/70 leading-relaxed mb-6 max-w-3xl">
-              Customer booking on the web, a staff desk for jobs and operators,
-              driver tools, payments, maps and calendar. Same stack we would
-              fork onto another operator&apos;s name.
+              Customer booking on the web, a staff desk for jobs, driver tools,
+              maps and calendar. Same chassis another operator would run under
+              their own name — not a private fork per firm.
             </p>
             <ul className="grid sm:grid-cols-2 gap-3 text-sm text-forge-black/70 mb-8">
               {[
                 "Customer website and online booking",
                 "One-tap ping for a pickup",
-                "Admin desk and operator reconciliation",
+                "Admin desk and job record",
                 "Driver portal",
                 "Android test apps (sideload, not store listings yet)",
                 "AI chat on the site",
@@ -65,13 +65,16 @@ export default function Work() {
         <Reveal delay={120}>
           <div className="rounded-3xl bg-forge-navy text-white p-8 md:p-10">
             <p className="text-hive-orange font-semibold text-sm mb-2">
-              The HiveForge guarantee
+              Websites
             </p>
             <p className="text-xl md:text-2xl font-bold leading-snug mb-4">
-              I build it first. You only pay if you are happy. No deposit, no
-              lock-in — if it is not right, you walk away owing nothing.
+              I build the site first. You only pay if you are happy. No deposit
+              on brochure work.
             </p>
-            <p className="text-white/50 text-sm">Adule, HiveForge</p>
+            <p className="text-white/50 text-sm">
+              Operator software is different: 50% setup deposit, then monthly.
+              Adule, HiveForge
+            </p>
           </div>
         </Reveal>
       </div>

@@ -7,27 +7,27 @@ import Reveal from "@/components/ui/Reveal";
 const faqs = [
   {
     q: "What does HiveForge actually do?",
-    a: "Software, web development, design and AI. Websites in 48 hours. Custom apps and backends when a brochure site is not enough. Patch Access is the live operator example.",
+    a: "Software, web development, design and AI. Websites in 48 hours. Operator software when a brochure site is not enough. Patch Access is the live example — your firm runs as a tenant on the same chassis, not a one-off rewrite.",
   },
   {
     q: "Are the prices on this page real?",
-    a: "Yes. Websites: £997 Core, then £97 or £197 a month if you want a retainer. Operator software is listed line by line, or £2,000 for the full package. VAT extra. Scope can change a quote.",
+    a: "Yes. Websites: £997 Core, then £97 or £197 a month if you want a retainer. Operator software: Operator is £795 setup + £99/month. Growth Enterprise is £1,995 setup + £229/month. Add-ons are on the card. Not VAT registered. Scope can change a quote.",
   },
   {
     q: "Can I click a real example?",
-    a: "https://www.patchaccess.uk — booking, ping, driver signup. A live Wiltshire taxi system HiveForge built and still runs.",
+    a: "https://www.patchaccess.uk — booking, ping, driver tools. A live Wiltshire taxi system HiveForge built and still runs.",
   },
   {
     q: "Do I have to use the Play Store or App Store?",
-    a: "No. Test apps can be sideloaded first. Store submission is support on the packaging line, not a listing on day one. Developer accounts are yours.",
+    a: "No. Start on the browser / PWA. Android staff sideload is an add-on. Store submission is quoted separately. Developer accounts are yours.",
   },
   {
-    q: "Is this a shared SaaS?",
-    a: "No. Custom software is a private fork on accounts in your name. HiveForge keeps access so we can support it.",
+    q: "Is this a shared SaaS or a private fork?",
+    a: "One product, separate tenant. Your name, drivers, number and booking records. Not a git fork per firm, and not a from-scratch rebuild. HiveForge keeps access so we can support it.",
   },
   {
     q: "What if I am not happy?",
-    a: "You only pay if you are happy. No deposit. Cancel retainers with 30 days' notice.",
+    a: "Websites: you only pay if you are happy, no deposit. Operator software: 50% setup deposit, monthly by direct debit, cancel with 30 days' notice.",
   },
 ];
 
