@@ -6,19 +6,43 @@ import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { sendContact } from "@/app/actions";
 import Reveal from "@/components/ui/Reveal";
 
+const inputClass =
+  "w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-hive-orange transition-colors";
+const labelClass = "block text-white/60 text-sm font-medium mb-1.5";
+const optional = <span className="text-white/30 font-normal">(optional)</span>;
+
+const BUSINESS_TYPES = [
+  { value: "sole-trader", label: "Sole trader" },
+  { value: "limited", label: "Limited company" },
+  { value: "partnership", label: "Partnership" },
+  { value: "starting", label: "Just starting out" },
+];
+
+const BUDGETS = [
+  { value: "under-1k", label: "Under £1,000" },
+  { value: "1k-2.5k", label: "£1,000 – £2,500" },
+  { value: "2.5k-5k", label: "£2,500 – £5,000" },
+  { value: "5k-plus", label: "£5,000+" },
+  { value: "monthly", label: "Monthly plan (from £97/month)" },
+];
+
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [pending, setPending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [businessType, setBusinessType] = useState("");
+  const [budget, setBudget] = useState("");
 
   const handleSubmit = async (formData: FormData) => {
     setPending(true);
+    setError(null);
     const result = await sendContact(formData);
     setPending(false);
 
     if (result.success) {
       setSubmitted(true);
     } else {
-      alert("Something went wrong — try again or email me directly.");
+      setError(result.error ?? "Something went wrong. Try again or email me directly.");
     }
   };
 
@@ -51,26 +75,89 @@ export default function ContactForm() {
           </div>
         ) : (
           <form action={handleSubmit} className="space-y-5">
+            {/* Honeypot: hidden from people, bots fill it in */}
+            <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+              <label htmlFor="cf-website-url">Leave this empty</label>
+              <input id="cf-website-url" name="website_url" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
+
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-white/60 text-sm font-medium mb-1.5">Your name</label>
-                <input name="name" type="text" required placeholder="Your name" className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-hive-orange transition-colors" />
+                <label htmlFor="cf-name" className={labelClass}>Your name</label>
+                <input id="cf-name" name="name" type="text" required autoComplete="name" placeholder="Your name" className={inputClass} />
               </div>
               <div>
-                <label className="block text-white/60 text-sm font-medium mb-1.5">Phone or email</label>
-                <input name="contact" type="text" required placeholder="Best way to reach you" className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-hive-orange transition-colors" />
+                <label htmlFor="cf-business-name" className={labelClass}>Business name</label>
+                <input id="cf-business-name" name="businessName" type="text" required autoComplete="organization" placeholder="e.g. Smith Roofing" className={inputClass} />
               </div>
             </div>
 
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label htmlFor="cf-phone" className={labelClass}>Phone</label>
+                <input id="cf-phone" name="phone" type="tel" required autoComplete="tel" placeholder="07… or 01…" pattern="[0-9+()\s-]{10,20}" title="A UK phone number, e.g. 07700 900123" className={inputClass} />
+              </div>
+              <div>
+                <label htmlFor="cf-email" className={labelClass}>Email</label>
+                <input id="cf-email" name="email" type="email" required autoComplete="email" placeholder="you@business.co.uk" className={inputClass} />
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label htmlFor="cf-business-type" className={labelClass}>Business type</label>
+                <select
+                  id="cf-business-type"
+                  name="businessType"
+                  required
+                  value={businessType}
+                  onChange={(e) => setBusinessType(e.target.value)}
+                  className={`${inputClass} ${businessType ? "" : "text-white/30"}`}
+                >
+                  <option value="" disabled>Choose one</option>
+                  {BUSINESS_TYPES.map((t) => (
+                    <option key={t.value} value={t.value} className="text-forge-black">{t.label}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label htmlFor="cf-budget" className={labelClass}>Budget</label>
+                <select
+                  id="cf-budget"
+                  name="budget"
+                  required
+                  value={budget}
+                  onChange={(e) => setBudget(e.target.value)}
+                  className={`${inputClass} ${budget ? "" : "text-white/30"}`}
+                >
+                  <option value="" disabled>Choose a range</option>
+                  {BUDGETS.map((b) => (
+                    <option key={b.value} value={b.value} className="text-forge-black">{b.label}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {businessType === "limited" && (
+              <div>
+                <label htmlFor="cf-company-number" className={labelClass}>Company number {optional}</label>
+                <input id="cf-company-number" name="companyNumber" type="text" placeholder="8 characters, e.g. 12345678" maxLength={10} className={inputClass} />
+              </div>
+            )}
+
             <div>
-              <label className="block text-white/60 text-sm font-medium mb-1.5">Business and what you need</label>
-              <input name="business" type="text" required placeholder="e.g. taxi operator — booking app, or a trade website" className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-hive-orange transition-colors" />
+              <label htmlFor="cf-site" className={labelClass}>Current website {optional}</label>
+              <input id="cf-site" name="currentWebsite" type="text" inputMode="url" placeholder="yourbusiness.co.uk" className={inputClass} />
             </div>
 
             <div>
-              <label className="block text-white/60 text-sm font-medium mb-1.5">Anything else? (optional)</label>
-              <textarea name="message" rows={3} placeholder="Website, custom software, or both? Links help." className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-hive-orange transition-colors resize-none" />
+              <label htmlFor="cf-need" className={labelClass}>What do you need?</label>
+              <textarea id="cf-need" name="message" rows={3} required placeholder="e.g. a new website, a booking app for my taxi firm, or both" className={`${inputClass} resize-none`} />
             </div>
+
+            {error && (
+              <p role="alert" className="text-center text-red-300 text-sm">{error}</p>
+            )}
 
             <button
               type="submit"
